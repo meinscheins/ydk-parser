@@ -7,5 +7,6 @@ async fn main() -> Result<()> {
     let mut db: Database = Database::new();
     db.load_from_json()?;
     db.print();
+    
     Ok(())
 }
