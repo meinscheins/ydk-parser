@@ -36,6 +36,7 @@ impl Database {
         
     }
 
+    //print data base for debug purposes
     pub fn print(&self) {
         for card in self.cards.iter() {
             println!("{0} {1}", card.get_name(), card.get_id());
@@ -45,7 +46,7 @@ impl Database {
 
 //load the data base with cards from ygoprodeck.com and write it to json
 pub async fn update_json() -> Result<()> {
-    let req = reqwest::get(DATABASE_URL)
+    let req:String = reqwest::get(DATABASE_URL)
     .await?
     .text()
     .await?;
