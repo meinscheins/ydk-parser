@@ -1,7 +1,6 @@
-use reqwest::Error;
 use serde_json::Value;
 use std::fs::File;
-use std::io::{self, prelude::*, BufReader};
+use std::io::{prelude::*, BufReader};
 use crate::{CardSimple, DeckSimple, SubDeck};
 
 pub async fn load_deck_list(file: &str) -> Result<DeckSimple, Box<dyn std::error::Error>> {
@@ -33,7 +32,7 @@ pub async fn load_deck_list(file: &str) -> Result<DeckSimple, Box<dyn std::error
             }          
         }
     }
-    Ok((deck))
+    Ok(deck)
 }
 
 async fn get_card_name(id: i64) -> Result<String, Box<dyn std::error::Error>> {
