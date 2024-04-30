@@ -2,8 +2,13 @@
 name = "ydk-parser"
 version = "0.1.0"
 edition = "2021"
+default-run = "print_deck"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+
+[[bin]]
+name = "print_deck"
+path = "src/bin/print.rs"
 
 [dependencies]
 serde_json = "1.0"
